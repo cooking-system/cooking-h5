@@ -62,7 +62,15 @@ export default {
       ]
     }
   },
+  created() {
+    this.eventInit()
+  },
   methods: {
+    eventInit() {
+      window.addEventListener('message', (e) => {
+        console.log(e)
+      }, false)
+    }
   }
 }
 </script>
