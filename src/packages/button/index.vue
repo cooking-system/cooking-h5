@@ -1,11 +1,17 @@
 <template>
-  <van-button @click="handleClick">{{ text }}</van-button>
+  <WidgetWrapper v-bind="$attrs">
+    <van-button class="cooking-btn" @click="handleClick">{{ text }}</van-button>
+  </WidgetWrapper>
 </template>
 
 <script>
+import WidgetWrapper from '@/components/widget-wrapper/index'
 import { nameWrapper } from '@/utils/index.js'
 export default {
   name: nameWrapper('button'),
+  components: {
+    WidgetWrapper
+  },
   props: {
     text: {
       type: String,
@@ -35,6 +41,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.cooking-btn {
+  width: 100%;
+}
 </style>

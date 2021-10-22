@@ -1,27 +1,32 @@
 <template>
-  <div class="image-wrapper">
-    <a v-if="href" :href="href" target="__blank">
-      <van-image :src="src">
+  <WidgetWrapper v-bind="$attrs">
+    <div class="image-wrapper">
+      <a v-if="href" :href="href" target="__blank">
+        <van-image :src="src">
+          <template v-slot:loading>
+            <van-loading type="spinner" size="20" />
+          </template>
+        </van-image>
+      </a>
+      <van-image v-else :src="src">
         <template v-slot:loading>
           <van-loading type="spinner" size="20" />
         </template>
       </van-image>
-    </a>
-    <van-image v-else :src="src">
-      <template v-slot:loading>
-        <van-loading type="spinner" size="20" />
-      </template>
-    </van-image>
-  </div>
+    </div>
+  </WidgetWrapper>
 </template>
 
 <script>
 import { nameWrapper } from '@/utils/index.js'
-import { Image as VanImage } from 'vant'
+import { Image as VanImage, Loading } from 'vant'
+import WidgetWrapper from '@/components/widget-wrapper/index'
 
 export default {
   components: {
-    VanImage
+    VanImage,
+    WidgetWrapper,
+    [Loading.name]: Loading
   },
   name: nameWrapper('image'),
   props: {
