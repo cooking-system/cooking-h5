@@ -2,13 +2,13 @@
   <WidgetWrapper v-bind="$attrs">
     <div :style="computedStyle" class="image-wrapper">
       <a v-if="href" :href="href" target="__blank">
-        <van-image :src="src">
+        <van-image class="image-wrapper__src" :src="src">
           <template v-slot:loading>
             <van-loading type="spinner" size="20" />
           </template>
         </van-image>
       </a>
-      <van-image v-else :src="src">
+      <van-image class="image-wrapper__src" v-else :src="src">
         <template v-slot:loading>
           <van-loading type="spinner" size="20" />
         </template>
@@ -46,6 +46,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.image-wrapper__src {
+  display: block;
+}
+
 .image-wrapper {
   width: 100%;
   height: 100%;

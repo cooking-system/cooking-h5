@@ -1,16 +1,18 @@
 <!-- home -->
 <template>
   <div id="widgets-list" class="preview-container">
-    <div
-      class="widget-wrapper"
-      v-for="(item, i) in list"
-      :name="i"
-      :key="i">
-      <component
-        :id="`widget-${item.name}-${i}`"
-        :is="item.name"
-        v-bind="item.data"
-      />
+    <div class="inner-preview-container">
+      <div
+        class="widget-wrapper"
+        v-for="(item, i) in list"
+        :name="i"
+        :key="i">
+        <component
+          :id="`widget-${item.name}-${i}`"
+          :is="item.name"
+          v-bind="item.data"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -39,12 +41,24 @@ export default {
   },
   data() {
     return {
+      // list: [
+      //   { 'name': 'cooking-image', data: { src: 'https://img01.yzcdn.cn/vant/cat.jpeg' }},
+      //   { 'name': 'cooking-image', data: { src: 'https://img01.yzcdn.cn/vant/cat.jpeg' }},
+      //   { 'name': 'cooking-bottom-btn' },
+      //   { 'name': 'cooking-button' },
+      //   { 'name': 'cooking-image', data: { src: 'https://img01.yzcdn.cn/vant/cat.jpeg' }}
+      // ]
       list: []
     }
   },
   created() {
     this.eventInit()
   },
+
+  mounted() {
+    this.setMarginBottomStyle()
+  },
+
   methods: {
     // 初始化prop的值
     _setDefaultData(component) {
@@ -63,6 +77,32 @@ export default {
         }
       })
       return component
+    },
+    findLastOneNotFixed() {
+      const target = document.querySelector('.inner-preview-container')
+      const children = target.children
+      const len = this.list.length - 1
+      let index = len
+      for (let i = len; i >= 0; i--) {
+        const item = this.list[i]
+        if (item.name !== 'cooking-bottom-btn') {
+          index = i
+          break
+        }
+      }
+      return children[index]
+    },
+    setMarginBottomStyle() {
+      const target = document.querySelector('.page-bottombtn__fixed')
+      if (target) {
+        const clientHeight = target.getBoundingClientRect().height
+        // const lastOne = this.findLastOneNotFixed()
+        const lastOne = this.findLastOneNotFixed()
+        if (lastOne) {
+          lastOne.style.marginBottom = clientHeight + 'px'
+        }
+        console.log(clientHeight)
+      }
     },
     eventInit() {
       window.addEventListener('message', (e) => {
@@ -85,11 +125,32 @@ export default {
     renderComponent(data) {
       const result = data.map(e => this._setDefaultData(e))
       this.list = result
+      this.setMarginBottomStyle()
     }
   }
 }
 </script>
+<style>
+html, body, #app {
+  background-color: #ddd;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+</style>
+
 <style lang="scss" scoped>
+.preview-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+
+  .inner-preview-container {
+    height: 100%;
+    overflow: auto;
+  }
+}
 .preview-wrapper {
   width: 100%;
   height: 100%;
