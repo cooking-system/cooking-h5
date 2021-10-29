@@ -1,17 +1,22 @@
 <template>
   <WidgetWrapper v-bind="$attrs">
-    <van-button class="cooking-btn" @click="handleClick">{{ text }}</van-button>
+    <van-button :style="computedStyle" class="cooking-btn" @click="handleClick">{{ text }}</van-button>
   </WidgetWrapper>
 </template>
 
 <script>
 import WidgetWrapper from '@/components/widget-wrapper/index'
 import { nameWrapper } from '@/utils/index.js'
+import computedStyleMixin from '@/mixins/computedStyle'
 export default {
   name: nameWrapper('button'),
+
+  mixins: [computedStyleMixin()],
+
   components: {
     WidgetWrapper
   },
+
   props: {
     text: {
       type: String,
@@ -33,6 +38,7 @@ export default {
       ]
     }
   },
+
   methods: {
     handleClick() {
       console.log(this.clickType)
@@ -44,5 +50,9 @@ export default {
 <style lang="scss" scoped>
 .cooking-btn {
   width: 100%;
+  border-radius: inherit;
+  background-color: inherit;
+  color: inherit;
+  border-color: inherit;
 }
 </style>

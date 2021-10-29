@@ -1,6 +1,6 @@
 <template>
   <WidgetWrapper v-bind="$attrs">
-    <div class="image-wrapper">
+    <div :style="computedStyle" class="image-wrapper">
       <a v-if="href" :href="href" target="__blank">
         <van-image :src="src">
           <template v-slot:loading>
@@ -21,14 +21,19 @@
 import { nameWrapper } from '@/utils/index.js'
 import { Image as VanImage, Loading } from 'vant'
 import WidgetWrapper from '@/components/widget-wrapper/index'
+import computedStyleMixin from '@/mixins/computedStyle'
 
 export default {
+  name: nameWrapper('image'),
+
+  mixins: [computedStyleMixin()],
+
   components: {
     VanImage,
     WidgetWrapper,
     [Loading.name]: Loading
   },
-  name: nameWrapper('image'),
+
   props: {
     src: {
       type: String
@@ -45,5 +50,6 @@ export default {
   width: 100%;
   height: 100%;
   max-width: 100%;
+  box-sizing: border-box;
 }
 </style>
