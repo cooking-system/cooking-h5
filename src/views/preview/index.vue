@@ -126,6 +126,14 @@ export default {
       const result = data.map(e => this._setDefaultData(e))
       this.list = result
       this.setMarginBottomStyle()
+    },
+    setGlobalStyle(data) {
+      console.log('setGlobalStyle')
+      console.log(data)
+      const { backgroundColor } = data
+      const val = `background-color: ${backgroundColor}`
+      document.querySelector('#app').setAttribute('style', val)
+      document.body.setAttribute('style', val)
     }
   }
 }

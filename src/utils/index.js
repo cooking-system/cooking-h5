@@ -110,3 +110,8 @@ export function param2Obj(url) {
       '"}'
   )
 }
+
+export const converCamel = (str, sym = '-') => {
+  const r = /([A-Z])g/
+  return str.replace(r, `${sym}$1`)
+}
