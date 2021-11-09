@@ -38,7 +38,7 @@ const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV)
 // }
 
 module.exports = {
-  publicPath: './', // 署应用包时的基本 URL。 vue-router hash 模式使用
+  publicPath: IS_PROD ? './public/dist' : '.', // 署应用包时的基本 URL。 vue-router hash 模式使用
   //  publicPath: '/app/', //署应用包时的基本 URL。  vue-router history模式使用
   outputDir: 'dist', //  生产环境构建文件的目录
   assetsDir: './', //  outputDir的静态资源(js、css、img、fonts)目录
@@ -107,8 +107,11 @@ module.exports = {
     // }
 
     config.plugins.forEach((val) => {
-      if (val instanceof HtmlWebpackPlugin) {
-        val.options.filename = 'index.tpl' // 修改输出文件名
+      if (IS_PROD) {
+        if (val instanceof HtmlWebpackPlugin) {
+          // val.options.filename = 'index.tpl' // 修改输出文件名
+          val.options.filename = 'index.tpl' // 修改输出文件名
+        }
       }
     })
   },
