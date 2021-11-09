@@ -26,6 +26,7 @@
     "core-js": "^3.6.4",
     "egg": "^2.31.0",
     "egg-scripts": "^2.15.1",
+    "egg-view-nunjucks": "^2.3.0",
     "lib-flexible": "^0.3.2",
     "lodash": "^4.17.15",
     "regenerator-runtime": "^0.13.5",

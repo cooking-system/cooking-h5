@@ -2,6 +2,7 @@
 const path = require('path')
 const defaultSettings = require('./src/config/index.js')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const resolve = dir => path.join(__dirname, dir)
 // page title
@@ -40,7 +41,7 @@ module.exports = {
   publicPath: './', // 署应用包时的基本 URL。 vue-router hash 模式使用
   //  publicPath: '/app/', //署应用包时的基本 URL。  vue-router history模式使用
   outputDir: 'dist', //  生产环境构建文件的目录
-  assetsDir: 'static', //  outputDir的静态资源(js、css、img、fonts)目录
+  assetsDir: './', //  outputDir的静态资源(js、css、img、fonts)目录
   lintOnSave: !IS_PROD,
   productionSourceMap: false, // 如果你不需要生产环境的 source map，可以将其设置为 false 以加速生产环境构建。
   devServer: {
@@ -64,6 +65,23 @@ module.exports = {
     //   }
     // }
   },
+  // pages: {
+  //   index: {
+  //     // page 的入口
+  //     entry: 'src/main.js',
+  //     // 模板来源
+  //     template: 'public/index.html',
+  //     // 在 dist/index.html 的输出
+  //     filename: 'index.tpl',
+  //     // 当使用 title 选项时，
+  //     // template 中的 title 标签需要是 <title><%= htmlWebpackPlugin.options.title %></title>
+  //     title: 'Index Page',
+  //     // 在这个页面中包含的块，默认情况下会包含
+  //     // 提取出来的通用 chunk 和 vendor chunk。
+  //     chunks: ['chunk-vendors', 'chunk-common', 'index']
+  //   }
+  //   // 当使用只有入口的字符串格式时，
+  // },
   css: {
     extract: IS_PROD, // 是否将组件中的 CSS 提取至一个独立的 CSS 文件中 (而不是动态注入到 JavaScript 中的 inline 代码)。
     sourceMap: false,
@@ -81,12 +99,18 @@ module.exports = {
   },
   configureWebpack: config => {
     config.name = name
-
+    // console.log(config.plugins)
     // 为生产环境修改配置...
     // if (IS_PROD) {
     //   // externals
     //   config.externals = externals
     // }
+
+    config.plugins.forEach((val) => {
+      if (val instanceof HtmlWebpackPlugin) {
+        val.options.filename = 'index.tpl' // 修改输出文件名
+      }
+    })
   },
 
   chainWebpack: config => {
@@ -128,13 +152,13 @@ module.exports = {
     /**
      * 打包分析
      */
-    if (IS_PROD) {
-      config.plugin('webpack-report').use(BundleAnalyzerPlugin, [
-        {
-          analyzerMode: 'static'
-        }
-      ])
-    }
+    // if (IS_PROD) {
+    //   config.plugin('webpack-report').use(BundleAnalyzerPlugin, [
+    //     {
+    //       analyzerMode: 'static'
+    //     }
+    //   ])
+    // }
     config
       // https://webpack.js.org/configuration/devtool/#development
       .when(!IS_PROD, config => config.devtool('cheap-source-map'))

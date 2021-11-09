@@ -20,7 +20,7 @@
 <script>
 import register from './register'
 
-document.domain = 'cooking.cn'
+// document.domain = 'cooking.cn'
 
 export default {
   components: {
