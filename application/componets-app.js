@@ -32,13 +32,14 @@ const readFile = (fileDir) => {
   try {
     const data = require(fileName)
     let obj = {}
-    const { injectCommonProps, properties, category } = data
+    const { injectCommonProps, properties, label, category } = data
     if (injectCommonProps) {
       obj = { ...getCommonProps() }
     }
     return {
       name,
       category,
+      label,
       properties: {
         ...obj,
         ...properties

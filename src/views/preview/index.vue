@@ -125,7 +125,8 @@ export default {
     addComponent(item) {
       const component = this._setDefaultData(item)
       this.list.push(component)
-      console.log(component)
+      // console.log(this.list)
+      // console.log(component)
     },
     renderComponent(data) {
       const result = data.map(e => this._setDefaultData(e))

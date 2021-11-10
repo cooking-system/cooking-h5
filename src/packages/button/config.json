@@ -1,28 +1,29 @@
 {
   "category": 1,
   "injectCommonProps": true,
+  "label": "普通按钮",
   "properties": {
     "src": {
       "label": "图片",
-      "type": "string",
+      "valueType": "string",
       "ui": "upload",
       "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
     },
     "srcEn": {
       "label": "图片(en)",
-      "type": "string",
+      "valueType": "string",
       "ui": "upload",
       "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
     },
     "srcKm": {
       "label": "图片(km)",
-      "type": "string",
+      "valueType": "string",
       "ui": "upload",
       "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
     },
     "href": {
       "label": "跳转链接",
-      "type": "string",
+      "valueType": "string",
       "ui": "input"
     }
   }

@@ -1,28 +1,29 @@
 {
   "category": 2,
   "injectCommonProps": true,
+  "label": "唤醒app",
   "properties": {
     "src": {
       "label": "图片",
-      "type": "String",
+      "valueType": "String",
       "ui": "upload",
       "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
     },
     "srcEn": {
       "label": "图片(en)",
-      "type": "String",
+      "valueType": "String",
       "ui": "upload",
       "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
     },
     "srcKm": {
       "label": "图片(km)",
-      "type": "String",
+      "valueType": "String",
       "ui": "upload",
       "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
     },
     "href": {
       "label": "跳转链接",
-      "type": "String",
+      "valueType": "String",
       "ui": "input"
     }
   }

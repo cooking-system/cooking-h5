@@ -21,9 +21,9 @@ class HomeController extends Controller {
     const isExist = fs.existsSync(targetPath)
     if (isExist) {
       const data = require(targetPath)
-      ctx.body = data
+      ctx.setSuccess(data)
     } else {
-      ctx.body = []
+      ctx.setSuccess([])
     }
   }
 }
