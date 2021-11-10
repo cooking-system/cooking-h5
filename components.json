@@ -1,0 +1,294 @@
+[
+  {
+    "name": "cooking-bottom-btn",
+    "category": 2,
+    "properties": {
+      "padding": {
+        "type": "Object",
+        "label": "内边距",
+        "ui": "padding"
+      },
+      "margin": {
+        "type": "Object",
+        "label": "外边距",
+        "ui": "margin"
+      },
+      "width": {
+        "label": "宽度",
+        "type": "String",
+        "ui": "input-number",
+        "append": "%",
+        "default": 100
+      },
+      "height": {
+        "label": "高度",
+        "type": "String",
+        "ui": "input-number",
+        "append": "px",
+        "default": "auto"
+      },
+      "borderRadius": {
+        "label": "边距",
+        "type": "String",
+        "ui": "border-radius"
+      },
+      "backgroundColor": {
+        "label": "背景色",
+        "type": "String",
+        "ui": "color-picker"
+      },
+      "color": {
+        "label": "颜色",
+        "type": "String",
+        "ui": "color-picker"
+      },
+      "borderColor": {
+        "label": "边框颜色",
+        "type": "String",
+        "ui": "color-picker"
+      },
+      "src": {
+        "label": "图片",
+        "type": "String",
+        "ui": "upload",
+        "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
+      },
+      "srcEn": {
+        "label": "图片(en)",
+        "type": "String",
+        "ui": "upload",
+        "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
+      },
+      "srcKm": {
+        "label": "图片(km)",
+        "type": "String",
+        "ui": "upload",
+        "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
+      },
+      "href": {
+        "label": "跳转链接",
+        "type": "String",
+        "ui": "input"
+      }
+    }
+  },
+  {
+    "name": "cooking-button",
+    "category": 1,
+    "properties": {
+      "padding": {
+        "type": "Object",
+        "label": "内边距",
+        "ui": "padding"
+      },
+      "margin": {
+        "type": "Object",
+        "label": "外边距",
+        "ui": "margin"
+      },
+      "width": {
+        "label": "宽度",
+        "type": "String",
+        "ui": "input-number",
+        "append": "%",
+        "default": 100
+      },
+      "height": {
+        "label": "高度",
+        "type": "String",
+        "ui": "input-number",
+        "append": "px",
+        "default": "auto"
+      },
+      "borderRadius": {
+        "label": "边距",
+        "type": "String",
+        "ui": "border-radius"
+      },
+      "backgroundColor": {
+        "label": "背景色",
+        "type": "String",
+        "ui": "color-picker"
+      },
+      "color": {
+        "label": "颜色",
+        "type": "String",
+        "ui": "color-picker"
+      },
+      "borderColor": {
+        "label": "边框颜色",
+        "type": "String",
+        "ui": "color-picker"
+      },
+      "src": {
+        "label": "图片",
+        "type": "string",
+        "ui": "upload",
+        "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
+      },
+      "srcEn": {
+        "label": "图片(en)",
+        "type": "string",
+        "ui": "upload",
+        "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
+      },
+      "srcKm": {
+        "label": "图片(km)",
+        "type": "string",
+        "ui": "upload",
+        "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
+      },
+      "href": {
+        "label": "跳转链接",
+        "type": "string",
+        "ui": "input"
+      }
+    }
+  },
+  {
+    "name": "cooking-call-app",
+    "category": 2,
+    "properties": {
+      "padding": {
+        "type": "Object",
+        "label": "内边距",
+        "ui": "padding"
+      },
+      "margin": {
+        "type": "Object",
+        "label": "外边距",
+        "ui": "margin"
+      },
+      "width": {
+        "label": "宽度",
+        "type": "String",
+        "ui": "input-number",
+        "append": "%",
+        "default": 100
+      },
+      "height": {
+        "label": "高度",
+        "type": "String",
+        "ui": "input-number",
+        "append": "px",
+        "default": "auto"
+      },
+      "borderRadius": {
+        "label": "边距",
+        "type": "String",
+        "ui": "border-radius"
+      },
+      "backgroundColor": {
+        "label": "背景色",
+        "type": "String",
+        "ui": "color-picker"
+      },
+      "color": {
+        "label": "颜色",
+        "type": "String",
+        "ui": "color-picker"
+      },
+      "borderColor": {
+        "label": "边框颜色",
+        "type": "String",
+        "ui": "color-picker"
+      },
+      "src": {
+        "label": "图片",
+        "type": "String",
+        "ui": "upload",
+        "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
+      },
+      "srcEn": {
+        "label": "图片(en)",
+        "type": "String",
+        "ui": "upload",
+        "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
+      },
+      "srcKm": {
+        "label": "图片(km)",
+        "type": "String",
+        "ui": "upload",
+        "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
+      },
+      "href": {
+        "label": "跳转链接",
+        "type": "String",
+        "ui": "input"
+      }
+    }
+  },
+  {
+    "name": "cooking-image",
+    "category": 1,
+    "properties": {
+      "padding": {
+        "type": "Object",
+        "label": "内边距",
+        "ui": "padding"
+      },
+      "margin": {
+        "type": "Object",
+        "label": "外边距",
+        "ui": "margin"
+      },
+      "width": {
+        "label": "宽度",
+        "type": "String",
+        "ui": "input-number",
+        "append": "%",
+        "default": 100
+      },
+      "height": {
+        "label": "高度",
+        "type": "String",
+        "ui": "input-number",
+        "append": "px",
+        "default": "auto"
+      },
+      "borderRadius": {
+        "label": "边距",
+        "type": "String",
+        "ui": "border-radius"
+      },
+      "backgroundColor": {
+        "label": "背景色",
+        "type": "String",
+        "ui": "color-picker"
+      },
+      "color": {
+        "label": "颜色",
+        "type": "String",
+        "ui": "color-picker"
+      },
+      "borderColor": {
+        "label": "边框颜色",
+        "type": "String",
+        "ui": "color-picker"
+      },
+      "src": {
+        "label": "图片",
+        "type": "String",
+        "ui": "upload",
+        "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
+      },
+      "srcEn": {
+        "label": "图片(en)",
+        "type": "String",
+        "ui": "upload",
+        "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
+      },
+      "srcKm": {
+        "label": "图片(km)",
+        "type": "String",
+        "ui": "upload",
+        "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
+      },
+      "href": {
+        "label": "跳转链接",
+        "type": "String",
+        "ui": "input"
+      }
+    }
+  }
+]
