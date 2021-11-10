@@ -13,6 +13,8 @@
           v-bind="item.data"
         />
       </div>
+      <!-- 用来占位，当置底的元素出现时 -->
+      <div id="widget-fixbottom__space"></div>
     </div>
   </div>
 </template>
@@ -99,14 +101,19 @@ export default {
     },
     setMarginBottomStyle() {
       const target = document.querySelector('.page-bottombtn__fixed')
+      const spaceItem = document.querySelector('#widget-fixbottom__space')
+
       if (target) {
         const clientHeight = target.getBoundingClientRect().height
+        spaceItem.style.height = clientHeight + 'px'
         // const lastOne = this.findLastOneNotFixed()
-        const lastOne = this.findLastOneNotFixed()
-        if (lastOne) {
-          lastOne.style.marginBottom = clientHeight + 'px'
-        }
+        // const lastOne = this.findLastOneNotFixed()
+        // if (lastOne) {
+        //   lastOne.style.marginBottom = clientHeight + 'px'
+        // }
         console.log(clientHeight)
+      } else {
+        spaceItem.style.height = 0 + 'px'
       }
     },
     eventInit() {
