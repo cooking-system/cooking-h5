@@ -6,8 +6,12 @@
 
 <script>
 import WidgetWrapper from '@/components/widget-wrapper/index'
-import { nameWrapper } from '@/utils/index.js'
+import { nameWrapper, getProps } from '@/utils/packages.js'
 import computedStyleMixin from '@/mixins/computedStyle'
+
+const config = require('./config.json')
+const props = getProps(config)
+
 export default {
   name: nameWrapper('button'),
 
@@ -18,14 +22,24 @@ export default {
   },
 
   props: {
+    ...props,
     text: {
+      label: '按钮文本',
       type: String,
+      ui: 'input',
       default: '点击按钮',
+      i18n: {
+        zh: 'text',
+        en: 'textEn',
+        km: 'textKm'
+      },
       required: true
     },
     clickType: {
+      label: '事件类型',
       type: String,
       default: '100',
+      ui: 'select',
       enum: [
         {
           label: '跳转链接',
@@ -36,6 +50,16 @@ export default {
           value: '200'
         }
       ]
+    },
+    link: {
+      label: '跳转链接',
+      type: String,
+      ui: 'input'
+    },
+    code: {
+      label: '自定义代码',
+      type: String,
+      ui: 'input-code'
     }
   },
 

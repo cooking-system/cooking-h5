@@ -12,7 +12,11 @@
 <script>
 import WidgetWrapper from '@/components/widget-wrapper/index'
 import CallAppTips from '@/components/call-app-tips/index'
-import { nameWrapper } from '@/utils/index.js'
+import { nameWrapper, getProps } from '@/utils/packages.js'
+
+const config = require('./config.json')
+const props = getProps(config)
+
 export default {
   name: nameWrapper('bottom-btn'),
 
@@ -28,30 +32,34 @@ export default {
   },
 
   props: {
+    ...props,
     leftText: {
+      label: '按钮文本(左)',
       type: String,
-      default: 'WOWNOW首页'
+      ui: 'input',
+      default: 'WOWNOW首页',
+      i18n: {
+        zh: 'leftText',
+        en: 'leftTextEn',
+        km: 'leftTextKm'
+      }
     },
+    rightText: {
+      label: '按钮文本(右)',
+      type: String,
+      ui: 'input',
+      default: '分享好友',
+      i18n: {
+        zh: 'rightText',
+        en: 'rightTextEn',
+        km: 'rightTextKm'
+      }
+    },
+
     leftTextEn: [String],
     leftTextKm: [String],
-    rightText: {
-      type: String,
-      default: '分享好友'
-    },
     rightTextEn: [String],
     rightTextKm: [String]
-    // iosUrl: {
-    //   type: String,
-    //   default: 'superapp://h5.lifekh.com/wakeup?routepath='
-    // },
-    // androidUrl: {
-    //   type: String,
-    //   default: 'yumnow://YumNow'
-    // },
-    // downloadUrl: {
-    //   type: String,
-    //   default: 'https://h5.lifekh.com/mobile-h5/wownow/down-loading'
-    // }
   },
 
   computed: {

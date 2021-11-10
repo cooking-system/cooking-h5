@@ -1,0 +1,28 @@
+{
+  "injectCommonProps": true,
+  "properties": {
+    "src": {
+      "label": "图片",
+      "type": "string",
+      "ui": "upload",
+      "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
+    },
+    "srcEn": {
+      "label": "图片(en)",
+      "type": "string",
+      "ui": "upload",
+      "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
+    },
+    "srcKm": {
+      "label": "图片(km)",
+      "type": "string",
+      "ui": "upload",
+      "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
+    },
+    "href": {
+      "label": "跳转链接",
+      "type": "string",
+      "ui": "input"
+    }
+  }
+}

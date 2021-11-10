@@ -20,11 +20,13 @@
 <script>
 import register from './register'
 
-// document.domain = 'cooking.cn'
+document.domain = 'cooking.cn'
+
+const componentList = register()
 
 export default {
   components: {
-    ...register()
+    ...componentList
   },
   computed: {
     language() {
@@ -62,10 +64,13 @@ export default {
   methods: {
     // 初始化prop的值
     _setDefaultData(component) {
-      const { properties, data: originData } = component
-      if (!properties) {
-        return
-      }
+      // eslint-disable-next-line prefer-const
+      // eslint-disable-next-line no-unused-vars
+      const { name, data: originData } = component
+      const target = componentList[name]
+      const props = target.props
+      const properties = { ...props }
+
       component.data = originData || {}
 
       Object.keys(properties).forEach(key => {

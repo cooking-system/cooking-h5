@@ -1,9 +1,6 @@
 /**
  * Created by PanJiaChen on 16/11/18.
  */
-export const nameWrapper = (name) => {
-  return `cooking-${name}`
-}
 /**
  * Parse the time to string
  * @param {(Object|string|number)} time

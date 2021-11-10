@@ -14,5 +14,6 @@ export default function install() {
     const { name } = item
     result[name] = item
   })
+  console.log(result)
   return result
 }

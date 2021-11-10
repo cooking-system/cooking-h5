@@ -8,7 +8,11 @@
 <script>
 import WidgetWrapper from '@/components/widget-wrapper/index'
 import CallAppTips from '@/components/call-app-tips/index'
-import { nameWrapper } from '@/utils/index.js'
+import { nameWrapper, getProps } from '@/utils/packages.js'
+
+const config = require('./config.json')
+const props = getProps(config)
+
 export default {
   name: nameWrapper('call-app'),
   components: {
@@ -21,21 +25,38 @@ export default {
     }
   },
   props: {
+    ...props,
     text: {
+      label: '文本内容',
       type: String,
-      default: '打开APP'
+      ui: 'input',
+      default: '打开APP',
+      i18n: {
+        zh: 'textZh',
+        en: 'textEn',
+        km: 'textKm'
+      }
     },
-    iosUrl: {
+    isoUrl: {
+      label: 'IOS地址',
       type: String,
-      default: 'superapp://h5.lifekh.com/wakeup?routepath='
+      ui: 'input',
+      default: 'superapp://h5.lifekh.com/wakeup?routepath=',
+      placeholder: 'superapp://h5.lifekh.com/wakeup?routepath='
     },
     androidUrl: {
+      label: 'Android地址',
       type: String,
-      default: 'yumnow://YumNow'
+      ui: 'input',
+      default: 'yumnow://YumNow',
+      placeholder: 'yumnow://YumNow'
     },
     downloadUrl: {
+      label: '下载链接',
       type: String,
-      default: 'https://h5.lifekh.com/mobile-h5/wownow/down-loading'
+      ui: 'input',
+      default: 'https://h5.lifekh.com/mobile-h5/wownow/down-loading',
+      placeholder: 'https://h5.lifekh.com/mobile-h5/wownow/down-loading'
     }
   },
 

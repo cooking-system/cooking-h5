@@ -18,10 +18,13 @@
 </template>
 
 <script>
-import { nameWrapper } from '@/utils/index.js'
+import { nameWrapper, getProps } from '@/utils/packages.js'
 import { Image as VanImage, Loading } from 'vant'
 import WidgetWrapper from '@/components/widget-wrapper/index'
 import computedStyleMixin from '@/mixins/computedStyle'
+
+const config = require('./config.json')
+const props = getProps(config)
 
 export default {
   name: nameWrapper('image'),
@@ -35,11 +38,29 @@ export default {
   },
 
   props: {
+    ...props,
     src: {
-      type: String
+      label: '图片',
+      type: String,
+      ui: 'upload',
+      default: 'https://img01.yzcdn.cn/vant/cat.jpeg'
+    },
+    srcEn: {
+      label: '图片(en)',
+      type: String,
+      ui: 'upload',
+      default: 'https://img01.yzcdn.cn/vant/cat.jpeg'
+    },
+    srcKm: {
+      label: '图片(km)',
+      type: String,
+      ui: 'upload',
+      default: 'https://img01.yzcdn.cn/vant/cat.jpeg'
     },
     href: {
-      type: String
+      label: '跳转链接',
+      type: String,
+      ui: 'input'
     }
   }
 }
