@@ -3,28 +3,27 @@
   "label": "置底按钮",
   "injectCommonProps": true,
   "properties": {
-    "src": {
-      "label": "图片",
+    "leftText": {
+      "label": "按钮文本(左)",
       "valueType": "String",
-      "ui": "upload",
-      "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
+      "ui": "input",
+      "default": "WOWNOW首页",
+      "i18n": {
+        "zh": "leftText",
+        "en": "leftTextEn",
+        "km": "leftTextKm"
+      }
     },
-    "srcEn": {
-      "label": "图片(en)",
+    "rightText": {
+      "label": "按钮文本(右)",
       "valueType": "String",
-      "ui": "upload",
-      "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
-    },
-    "srcKm": {
-      "label": "图片(km)",
-      "valueType": "String",
-      "ui": "upload",
-      "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
-    },
-    "href": {
-      "label": "跳转链接",
-      "valueType": "String",
-      "ui": "input"
+      "ui": "input",
+      "default": "分享好友",
+      "i18n": {
+        "zh": "rightText",
+        "en": "rightTextEn",
+        "km": "rightTextKm"
+      }
     }
   }
 }

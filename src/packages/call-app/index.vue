@@ -25,39 +25,7 @@ export default {
     }
   },
   props: {
-    ...props,
-    text: {
-      label: '文本内容',
-      type: String,
-      ui: 'input',
-      default: '打开APP',
-      i18n: {
-        zh: 'textZh',
-        en: 'textEn',
-        km: 'textKm'
-      }
-    },
-    isoUrl: {
-      label: 'IOS地址',
-      type: String,
-      ui: 'input',
-      default: 'superapp://h5.lifekh.com/wakeup?routepath=',
-      placeholder: 'superapp://h5.lifekh.com/wakeup?routepath='
-    },
-    androidUrl: {
-      label: 'Android地址',
-      type: String,
-      ui: 'input',
-      default: 'yumnow://YumNow',
-      placeholder: 'yumnow://YumNow'
-    },
-    downloadUrl: {
-      label: '下载链接',
-      type: String,
-      ui: 'input',
-      default: 'https://h5.lifekh.com/mobile-h5/wownow/down-loading',
-      placeholder: 'https://h5.lifekh.com/mobile-h5/wownow/down-loading'
-    }
+    ...props
   },
 
   computed: {

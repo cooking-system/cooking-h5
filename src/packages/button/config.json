@@ -3,28 +3,43 @@
   "injectCommonProps": true,
   "label": "普通按钮",
   "properties": {
-    "src": {
-      "label": "图片",
-      "valueType": "string",
-      "ui": "upload",
-      "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
+    "text": {
+      "label": "按钮文本",
+      "valueType": "String",
+      "ui": "input",
+      "default": "点击按钮",
+      "i18n": {
+        "zh": "text",
+        "en": "textEn",
+        "km": "textKm"
+      },
+      "required": true
     },
-    "srcEn": {
-      "label": "图片(en)",
-      "valueType": "string",
-      "ui": "upload",
-      "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
+    "clickType": {
+      "label": "事件类型",
+      "valueType": "String",
+      "default": "100",
+      "ui": "select",
+      "enum": [
+        {
+          "label": "跳转链接",
+          "value": "100"
+        },
+        {
+          "label": "自定义代码",
+          "value": "200"
+        }
+      ]
     },
-    "srcKm": {
-      "label": "图片(km)",
-      "valueType": "string",
-      "ui": "upload",
-      "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
-    },
-    "href": {
+    "link": {
       "label": "跳转链接",
-      "valueType": "string",
+      "valueType": "String",
       "ui": "input"
+    },
+    "code": {
+      "label": "自定义代码",
+      "valueType": "String",
+      "ui": "input-code"
     }
   }
 }

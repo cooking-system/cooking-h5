@@ -33,29 +33,6 @@ export default {
 
   props: {
     ...props,
-    leftText: {
-      label: '按钮文本(左)',
-      type: String,
-      ui: 'input',
-      default: 'WOWNOW首页',
-      i18n: {
-        zh: 'leftText',
-        en: 'leftTextEn',
-        km: 'leftTextKm'
-      }
-    },
-    rightText: {
-      label: '按钮文本(右)',
-      type: String,
-      ui: 'input',
-      default: '分享好友',
-      i18n: {
-        zh: 'rightText',
-        en: 'rightTextEn',
-        km: 'rightTextKm'
-      }
-    },
-
     leftTextEn: [String],
     leftTextKm: [String],
     rightTextEn: [String],

@@ -111,7 +111,6 @@ export default {
         // if (lastOne) {
         //   lastOne.style.marginBottom = clientHeight + 'px'
         // }
-        console.log(clientHeight)
       } else {
         spaceItem.style.height = 0 + 'px'
       }
@@ -132,8 +131,6 @@ export default {
     addComponent(item) {
       const component = this._setDefaultData(item)
       this.list.push(component)
-      // console.log(this.list)
-      // console.log(component)
     },
     renderComponent(data) {
       const result = data.map(e => this._setDefaultData(e))

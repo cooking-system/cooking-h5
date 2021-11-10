@@ -3,28 +3,37 @@
   "injectCommonProps": true,
   "label": "唤醒app",
   "properties": {
-    "src": {
-      "label": "图片",
+    "text": {
+      "label": "文本内容",
       "valueType": "String",
-      "ui": "upload",
-      "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
+      "ui": "input",
+      "default": "打开APP",
+      "i18n": {
+        "zh": "textZh",
+        "en": "textEn",
+        "km": "textKm"
+      }
     },
-    "srcEn": {
-      "label": "图片(en)",
+    "isoUrl": {
+      "label": "IOS地址",
       "valueType": "String",
-      "ui": "upload",
-      "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
+      "ui": "input",
+      "default": "superapp://h5.lifekh.com/wakeup?routepath=",
+      "placeholder": "superapp://h5.lifekh.com/wakeup?routepath="
     },
-    "srcKm": {
-      "label": "图片(km)",
+    "androidUrl": {
+      "label": "Android地址",
       "valueType": "String",
-      "ui": "upload",
-      "default": "https://img01.yzcdn.cn/vant/cat.jpeg"
+      "ui": "input",
+      "default": "yumnow://YumNow",
+      "placeholder": "yumnow://YumNow"
     },
-    "href": {
-      "label": "跳转链接",
+    "downloadUrl": {
+      "label": "下载链接",
       "valueType": "String",
-      "ui": "input"
+      "ui": "input",
+      "default": "https://h5.lifekh.com/mobile-h5/wownow/down-loading",
+      "placeholder": "https://h5.lifekh.com/mobile-h5/wownow/down-loading"
     }
   }
 }
