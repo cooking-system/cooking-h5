@@ -21,8 +21,9 @@
 
 <script>
 import register from './register'
+import { getConfig } from '@/utils/ssr-config'
 
-document.domain = 'cooking.cn'
+// document.domain = 'cooking.cn'
 
 const componentList = register()
 
@@ -33,6 +34,10 @@ export default {
   computed: {
     language() {
       return this.$route.query ? this.$route.query.language : 'zh'
+    },
+    pageConfig() {
+      const config = getConfig()
+      return config.pageConfig || null
     }
   },
   watch: {
@@ -55,11 +60,16 @@ export default {
       list: []
     }
   },
+
   created() {
+    console.log('this.pageConfig')
+    console.log(this.pageConfig)
     this.eventInit()
   },
 
   mounted() {
+    console.log('this.language')
+    console.log(this.language)
     this.setMarginBottomStyle()
   },
 

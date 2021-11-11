@@ -98,6 +98,7 @@ module.exports = {
     }
   },
   configureWebpack: config => {
+    console.log(config)
     config.name = name
     // console.log(config.plugins)
     // 为生产环境修改配置...
@@ -117,6 +118,7 @@ module.exports = {
   },
 
   chainWebpack: config => {
+    console.log(config)
     config.plugins.delete('preload') // TODO: need test
     config.plugins.delete('prefetch') // TODO: need test
 

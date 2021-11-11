@@ -10,10 +10,20 @@ class HomeController extends Controller {
   }
   async page() {
     const { ctx } = this
-    const data = { name: 'egg' }
-
+    const { id } = ctx.request.query
+    const result = await ctx.curl('http://127.0.0.1:7777/page-config/get', {
+      method: 'get',
+      dataType: 'json',
+      data: { id }
+    })
+    const data = (result.data ? result.data.data : {}) || {}
+    const config = {
+      ssrConfig: encodeURIComponent(JSON.stringify({
+        pageConfig: data
+      }))
+    }
     // render a template, path relate to `app/view`
-    await ctx.render('index.tpl', data)
+    await ctx.render('index.tpl', config)
   }
   async components() {
     const { ctx } = this

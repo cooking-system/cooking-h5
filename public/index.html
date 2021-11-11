@@ -13,6 +13,12 @@
   </head>
   <body>
     <div id="app"></div>
+    <script>
+      window.ssrConfig = '{{ ssrConfig }}'
+      if (window.ssrConfig && window.ssrConfig.indexOf('ssrConfig') !== 3) {
+        window.ssrConfig = JSON.parse(decodeURIComponent(window.ssrConfig))
+      }
+    </script>
     <!-- 使用CDN加速的JS文件，配置在vue.config.js下 -->
     <!-- <% for (var i in
       htmlWebpackPlugin.options.cdn&&htmlWebpackPlugin.options.cdn.js) { %>
