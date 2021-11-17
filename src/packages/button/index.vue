@@ -1,6 +1,7 @@
 <template>
   <WidgetWrapper v-bind="$attrs">
-    <van-button :style="computedStyle" class="cooking-btn" @click="handleClick">{{ text }}</van-button>
+    {{ $attrs }}
+    <van-button v-bind:style="computedStyle" class="cooking-btn" @click="handleClick">{{ text }}</van-button>
   </WidgetWrapper>
 </template>
 
@@ -36,9 +37,9 @@ export default {
 <style lang="scss" scoped>
 .cooking-btn {
   width: 100%;
-  border-radius: inherit;
-  background-color: inherit;
-  color: inherit;
-  border-color: inherit;
+  // border-radius: inherit;
+  // background-color: inherit;
+  // color: inherit;
+  // border-color: inherit;
 }
 </style>

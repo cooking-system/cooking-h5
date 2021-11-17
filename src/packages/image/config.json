@@ -1,5 +1,6 @@
 {
   "category": 1,
+  "isNeedWrapper": true,
   "injectCommonProps": true,
   "label": "图片",
   "properties": {

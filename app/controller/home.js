@@ -16,6 +16,7 @@ class HomeController extends Controller {
       dataType: 'json',
       data: { id }
     })
+    console.log(id)
     const data = (result.data ? result.data.data : {}) || {}
     const config = {
       ssrConfig: encodeURIComponent(JSON.stringify({

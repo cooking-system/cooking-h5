@@ -23,7 +23,7 @@
 import register from './register'
 import { getConfig } from '@/utils/ssr-config'
 
-// document.domain = 'cooking.cn'
+document.domain = 'cooking.cn'
 
 const componentList = register()
 
@@ -65,6 +65,7 @@ export default {
     console.log('this.pageConfig')
     console.log(this.pageConfig)
     this.eventInit()
+    this.initPage()
   },
 
   mounted() {
@@ -74,6 +75,14 @@ export default {
   },
 
   methods: {
+    initPage() {
+      const config = this.pageConfig
+      if (!config) {
+        return console.error('page config is null')
+      }
+      const { components } = config
+      this.list = [...components, ...components]
+    },
     // 初始化prop的值
     _setDefaultData(component) {
       // eslint-disable-next-line prefer-const
@@ -93,6 +102,7 @@ export default {
           component.data[key] = val.default
         }
       })
+
       return component
     },
     findLastOneNotFixed() {

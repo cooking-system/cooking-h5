@@ -3,17 +3,8 @@
     "name": "cooking-bottom-btn",
     "category": 2,
     "label": "置底按钮",
+    "isNeedWrapper": true,
     "properties": {
-      "padding": {
-        "valueType": "Object",
-        "label": "内边距",
-        "ui": "padding"
-      },
-      "margin": {
-        "valueType": "Object",
-        "label": "外边距",
-        "ui": "margin"
-      },
       "width": {
         "label": "宽度",
         "valueType": "String",
@@ -21,30 +12,8 @@
         "append": "%",
         "default": 100
       },
-      "height": {
-        "label": "高度",
-        "valueType": "String",
-        "ui": "input-number",
-        "append": "px",
-        "default": "auto"
-      },
-      "borderRadius": {
-        "label": "边距",
-        "valueType": "String",
-        "ui": "border-radius"
-      },
-      "backgroundColor": {
-        "label": "背景色",
-        "valueType": "String",
-        "ui": "color-picker"
-      },
       "color": {
         "label": "颜色",
-        "valueType": "String",
-        "ui": "color-picker"
-      },
-      "borderColor": {
-        "label": "边框颜色",
         "valueType": "String",
         "ui": "color-picker"
       },
@@ -76,36 +45,8 @@
     "name": "cooking-button",
     "category": 1,
     "label": "普通按钮",
+    "isNeedWrapper": true,
     "properties": {
-      "padding": {
-        "valueType": "Object",
-        "label": "内边距",
-        "ui": "padding"
-      },
-      "margin": {
-        "valueType": "Object",
-        "label": "外边距",
-        "ui": "margin"
-      },
-      "width": {
-        "label": "宽度",
-        "valueType": "String",
-        "ui": "input-number",
-        "append": "%",
-        "default": 100
-      },
-      "height": {
-        "label": "高度",
-        "valueType": "String",
-        "ui": "input-number",
-        "append": "px",
-        "default": "auto"
-      },
-      "borderRadius": {
-        "label": "边距",
-        "valueType": "String",
-        "ui": "border-radius"
-      },
       "backgroundColor": {
         "label": "背景色",
         "valueType": "String",
@@ -165,51 +106,8 @@
     "name": "cooking-call-app",
     "category": 2,
     "label": "唤醒app",
+    "isNeedWrapper": true,
     "properties": {
-      "padding": {
-        "valueType": "Object",
-        "label": "内边距",
-        "ui": "padding"
-      },
-      "margin": {
-        "valueType": "Object",
-        "label": "外边距",
-        "ui": "margin"
-      },
-      "width": {
-        "label": "宽度",
-        "valueType": "String",
-        "ui": "input-number",
-        "append": "%",
-        "default": 100
-      },
-      "height": {
-        "label": "高度",
-        "valueType": "String",
-        "ui": "input-number",
-        "append": "px",
-        "default": "auto"
-      },
-      "borderRadius": {
-        "label": "边距",
-        "valueType": "String",
-        "ui": "border-radius"
-      },
-      "backgroundColor": {
-        "label": "背景色",
-        "valueType": "String",
-        "ui": "color-picker"
-      },
-      "color": {
-        "label": "颜色",
-        "valueType": "String",
-        "ui": "color-picker"
-      },
-      "borderColor": {
-        "label": "边框颜色",
-        "valueType": "String",
-        "ui": "color-picker"
-      },
       "text": {
         "label": "文本内容",
         "valueType": "String",
@@ -248,51 +146,8 @@
     "name": "cooking-image",
     "category": 1,
     "label": "图片",
+    "isNeedWrapper": true,
     "properties": {
-      "padding": {
-        "valueType": "Object",
-        "label": "内边距",
-        "ui": "padding"
-      },
-      "margin": {
-        "valueType": "Object",
-        "label": "外边距",
-        "ui": "margin"
-      },
-      "width": {
-        "label": "宽度",
-        "valueType": "String",
-        "ui": "input-number",
-        "append": "%",
-        "default": 100
-      },
-      "height": {
-        "label": "高度",
-        "valueType": "String",
-        "ui": "input-number",
-        "append": "px",
-        "default": "auto"
-      },
-      "borderRadius": {
-        "label": "边距",
-        "valueType": "String",
-        "ui": "border-radius"
-      },
-      "backgroundColor": {
-        "label": "背景色",
-        "valueType": "String",
-        "ui": "color-picker"
-      },
-      "color": {
-        "label": "颜色",
-        "valueType": "String",
-        "ui": "color-picker"
-      },
-      "borderColor": {
-        "label": "边框颜色",
-        "valueType": "String",
-        "ui": "color-picker"
-      },
       "src": {
         "label": "图片",
         "valueType": "String",

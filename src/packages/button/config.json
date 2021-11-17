@@ -1,6 +1,7 @@
 {
   "category": 1,
-  "injectCommonProps": true,
+  "isNeedWrapper": true,
+  "injectCommonProps": ["backgroundColor", "color", "borderColor"],
   "label": "普通按钮",
   "properties": {
     "text": {

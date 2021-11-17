@@ -18,6 +18,7 @@ const readDirList = () => {
   return []
 }
 
+// eslint-disable-next-line no-unused-vars
 const getCommonProps = () => {
   const targetPath = path.join(baseDir, './src/packages/common/commonProps.json')
   const data = require(targetPath)
@@ -31,15 +32,24 @@ const readFile = (fileDir) => {
 
   try {
     const data = require(fileName)
-    let obj = {}
-    const { injectCommonProps, properties, label, category } = data
-    if (injectCommonProps) {
-      obj = { ...getCommonProps() }
+    const obj = {}
+    const commonProps = getCommonProps()
+    const { injectCommonProps, properties, label, category, ...rest } = data
+
+    // 考虑的组件本身已经具有一定样式，是否提供给用户高度自定义的功能需要进一步的讨论，否则只会平白无故增加开发的难度
+    if (injectCommonProps === 'all') {
+      obj = { ...commonProps }
+    } else if (Array.isArray(injectCommonProps) && injectCommonProps.length) {
+      for (let i = 0; i < injectCommonProps.length; i++) {
+        const key = injectCommonProps[i]
+        obj[key] = commonProps[key]
+      }
     }
     return {
       name,
       category,
       label,
+      ...rest,
       properties: {
         ...obj,
         ...properties
